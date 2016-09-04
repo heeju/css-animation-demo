@@ -145,7 +145,7 @@ h1 {
 .sidebar-image-frame,
 .mobile-image-frame {
   transform-origin: bottom;
-  transition: opacity .5s, transform .5s, left .5s, right .5s, bottom .5s, background-position .5s, background-size .5s;
+  transition: opacity .5s, transform .5s, left .5s, right .5s, bottom .5s, background .5s;
   /* transition: all .5s; */
 }
 .document-image-frame,
@@ -164,7 +164,7 @@ h1 {
 .document-image-frame img {
   position: absolute;
   display: none;
-  transition: opacity .1s;
+  transition: opacity .1s, width .5s, height .5s, left .5s;
 }
 
 .active .document-image-frame img {
@@ -199,9 +199,9 @@ h1 {
 #slide-a .document-image-frame img,
 #slide-b.active .document-image-frame img,
 .active-slide-c #slide-b .document-image-frame img {
-  width: 916px;
-  height: 513px;
-  left: -45px;
+  width: 1056px;
+  height: 591px;
+  left: -115px;
 }
 
 
@@ -433,8 +433,9 @@ h1 {
   transition: opacity .5s, transform .5s, left .5s;
   transition-delay: 0s;
 }
-.active-slide-c .sidebar-image-frame {
-  background-size: 1200px 768px !important;
+.active-slide-c #slide-a .sidebar-image-frame,
+.active-slide-c #slide-b .sidebar-image-frame {
+  background-size: 1200px 768px;
 }
 
 .active-slide-c #slide-b .document-image-frame,
