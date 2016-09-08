@@ -1,0 +1,247 @@
+/**
+ * @author heeju jeong
+ */
+html,body {
+  height:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  vertical-align:baseline;
+  font-size: 16px;
+  font-family:sans-serif;
+  position:relative;
+  line-height:1;
+  background-color: #f6f6f6;
+  -webkit-font-smoothing: antialiased;
+}
+ul,li {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+a, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+a img {
+  border: 0;
+}
+
+.video-container {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 .1rem .1rem rgba(0,0,0,.6);
+  z-index: 10;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #777 url(../images/bg.jpg) no-repeat 50% 0;
+  background-size: cover;
+  transform: scale3d(1, 1, 1);
+  transition: transform .7s;
+}
+
+
+
+.video-container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+  display: block;
+  background: rgba(52,62,58,.5);
+}
+
+.video-container .inner {
+  position: relative;
+  min-width: 400px;
+  max-width: 1000px;
+  padding: 40px 40px;
+  z-index: 1;
+  transform: scale3d(1,1,1);
+  transition: transform .7s, opacity .7s;
+}
+
+.video-dialog-open .video-container {
+  transform: scale3d(1.1,1.1,1.1);
+  -ms-transform: none;
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+.video-dialog-open .video-container .inner {
+  transform: scale3d(1.2,1.2,1.2);
+  opacity: .1;
+}
+
+.video-container h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.video-container .subheading {
+  font-size: 20px;
+  margin: 0 0 30px;
+  line-height: 1.5;
+}
+
+/* video */
+.watch-button {
+  position: relative;
+  display: inline-block;
+  width: 140px;
+  height: 82px;
+  padding: 0 20px;
+  margin: 0 auto;
+  line-height: 90px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 28px;
+  text-shadow: 0 2px 2px rgba(0,0,0,1);
+  border-radius: 18px;
+  background: #000 url(../images/thumbnail.jpg) no-repeat 0 50%;
+  background-size: 500%;
+  box-shadow: inset 0 160px rgba(0,0,0,.8);
+  transform: scale3d(1,1,1);
+  transform-origin: bottom;
+  transition: box-shadow .3s;
+  animation: video-thumnail 7.5s steps(5, end) infinite;
+}
+@keyframes video-thumnail {
+  100% {background-position: 125% 50%;}
+}
+.watch-button:hover {
+  box-shadow: inset 0 160px rgba(0,0,0,.5);
+  animation-play-state: paused;
+}
+/* .watch-button:before {
+  line-height: 1;
+  vertical-align: -31.5%;
+  content: "\e008";
+  font-size: 2.2em;
+  margin-right: .1em;
+  font-family: icon;
+} */
+.video-dialog-open .watch-button {
+  opacity: 0;
+  /* transform: scale3d(2.4,2.4,2.4); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * dialog
+ */
+.video-dialog-open {
+  overflow: hidden;
+}
+
+.video-dialog,
+.video-dialog-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.video-dialog {
+  display: none;
+  min-width: 300px;
+  z-index: 1000;
+  padding: 40px;
+}
+
+.video-dialog-overlay {
+  z-index: 1010;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.open .video-dialog-overlay {
+  opacity: .5;
+}
+
+.video-dialog-wrap {
+  position: relative;
+  height: auto;
+  min-height: 10rem;
+  max-width: 54rem;
+  padding: 4.8rem 1rem 1rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  z-index: 1100;
+  box-shadow: 0 0 10px rgba(0,0,0,.7);
+  max-width: 120rem;
+  min-height: 0;
+  padding: 0;
+  border-radius: 0;
+  background-color: #000;
+  box-shadow: none;
+}
+
+.video-dialog-wrap iframe {
+  width: 100%;
+}
+
+a.video-dialog-close {
+  position: absolute;
+  top: 3px;
+  right: -28px;
+  width: 26px;
+  height: 26px;
+  text-indent: 999px;
+}
+
+a.video-dialog-close:before,
+a.video-dialog-close:after {
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  background-color: #fff;
+}
+a.video-dialog-close:before {
+  transform: rotate(45deg);
+}
+a.video-dialog-close:after {
+  transform: rotate(-45deg);
+}
+
+
