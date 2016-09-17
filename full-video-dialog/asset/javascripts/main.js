@@ -48,7 +48,6 @@ function VideoDialog(options) {
   };
 }
 
-
 VideoDialog.open = function() {
   if (!this instanceof VideoDialog) {
     return false;
@@ -72,7 +71,6 @@ VideoDialog.open = function() {
   } else {
     setTimeout(transitionHandler, 0);
   }
-
 };
 
 
@@ -267,7 +265,6 @@ VideoDialog.prototype.open = function() {
 VideoDialog.prototype.close = function() {
   this.el.$dialog.trigger("dialogclose");
 };
-
 
 
 $(function() {

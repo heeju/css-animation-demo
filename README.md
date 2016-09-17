@@ -6,3 +6,6 @@ List of My UI Demos
 
 ####[Full Video Dialog](https://heeju.github.io/ui-demos/full-video-dialog/)
 ![full-video-dialog.gif](./previews/full-video-dialog.gif)
+
+####[Icon Hover Slide](https://heeju.github.io/ui-demos/icon-hover-silde/)
+![icon-hover-silde.gif](./previews/icon-hover-silde.gif)
